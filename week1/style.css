@@ -1,0 +1,83 @@
+body {
+  padding: 40px 400px;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color:#9b6eff;
+}
+
+* {box-sizing: border-box}
+
+input[type=text], input[type=password], input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border:none;
+  border-bottom:1px solid #fff;
+  background:transparent;
+  outline:none;
+  color:#fff;
+  font-size:14px;
+  text-align:center;
+}
+
+h1 {
+  text-align:center;
+  color:white;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+button {
+  background-color: #04AA6D;
+  color: white;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+  font-weight:bold;
+  font-size: 14px;
+}
+
+button:hover {
+  color:pink;
+ border:2px solid;
+}
+
+label {
+  font-weight:bold;
+  color:#fff;
+}
+
+.cancelbtn, .signupbtn {
+  width: 100%;
+  border:1px solid;
+ height:40px;
+ color:violet;
+ background-color:transparent;
+}
+
+.container {
+  position: relative;
+  height: 700px;
+  background:rgba(0,0,0,.5);
+}
+
+.center {
+  margin: 0;
+  padding: 16px;
+  position: absolute;
+  top: 50%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+}

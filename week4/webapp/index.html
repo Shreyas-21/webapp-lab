@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Books Catalogue</title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<div id="query-container">
+		<div id="query">
+			<label for="user">Enter user name: </label>
+			<input type="text" name="user" id="user">
+			<button id='submit-button'>Get Books!</button>
+		</div>
+	</div>
+	<div id='book-table-container'></div>
+</body>
+<script>
+		function showBooks(user) {
+		  if (user == "") {
+		    document.getElementById("book-table-container").innerHTML = "";
+		    return;
+		  } else {
+		    var xmlhttp = new XMLHttpRequest();
+		    xmlhttp.onreadystatechange = function() {
+		      if (this.readyState == 4 && this.status == 200) {
+		        document.getElementById("book-table-container").innerHTML = this.responseText;
+		      }
+		    };
+		    xmlhttp.open("GET","Books?user="+user,true);
+		    xmlhttp.send();
+		  }
+		}
+		
+		document.getElementById('submit-button').addEventListener('click', function() {
+			user = document.getElementById('user').value;
+			showBooks(user);
+		});
+	</script>
+</html>

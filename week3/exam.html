@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Online Exam</title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<div id="main">
+		<h2>Online Examination</h2>
+		<hr>
+		
+		<div id="questions">
+			<form action="http://localhost:8080/WeekThree/exam.jsp">
+				<div id="details">
+					<label for="name">Name </label>
+					<input type="text" id="name" name="name">
+					
+					<label for="rollno">Roll Number</label>
+					<input type="number" id="rollno" name="rollno">
+				</div>
+				<div class="question-container">
+					<div class="question">
+						<p>1. What is the full form of TCP?</p>
+					</div>
+					<div class="answer">
+						<div class="option">
+							<input type="radio" id="q1o1" name="q1" value="o1">
+							<label for="q1o1">Trigger Capture Protocol</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q1o2" name="q1" value="o2">
+							<label for="q1o2">Transmission Control Protocol</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q1o3" name="q1" value="o3">
+							<label for="q1o3">Total Control Protocol</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q1o4" name="q1" value="o4">
+							<label for="q1o4">Transmission Communication Protocol</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="question-container">
+					<div class="question">
+						<p>2. Which one of the following is not a real time operating system?</p>
+					</div>
+					<div class="answer">
+						<div class="option">
+							<input type="radio" id="q2o1" name="q2" value="o1">
+							<label for="q2o1">RT Linux</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q2o2" name="q2" value="o2">
+							<label for="q2o2">Palm OS</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q2o3" name="q2" value="o3">
+							<label for="q2o3">QNX</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q2o4" name="q2" value="o4">
+                            <label for="q2o4">VxWorks</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="question-container">
+					<div class="question">
+						<p>3. What is the worst case time complexity of merge sort</p>
+					</div>
+					<div class="answer">
+						<div class="option">
+							<input type="radio" id="q3o1" name="q3" value="o1">
+							<label for="q3o1">O(n<sup>2</sup>)</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q3o2" name="q3" value="o2">
+							<label for="q3o2">O(nlogn<sup>2</sup>)</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q3o3" name="q3" value="o3">
+							<label for="q3o3">O(nlogn)</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q3o4" name="q3" value="o4">
+                            <label for="q3o4">O(n<sup>2</sup>logn)</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="question-container">
+					<div class="question">
+						<p>4. _____ is a software development activity that is not a part of software processes.</p>
+					</div>
+					<div class="answer">
+						<div class="option">
+							<input type="radio" id="q4o1" name="q4" value="o1">
+							<label for="q4o1">Validation</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q4o2" name="q4" value="o2">
+							<label for="q4o2">Specification</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q4o3" name="q4" value="o3">
+							<label for="q4o3">Development</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q4o4" name="q4" value="o4">
+                            <label for="q4o4">Dependence</label>
+						</div>
+					</div>
+				</div>
+				
+				<div class="question-container">
+					<div class="question">
+						<p>5. Which of the following defines the Cookie visibility?</p>
+					</div>
+					<div class="answer">
+						<div class="option">
+							<input type="radio" id="q5o1" name="q5" value="o1">
+							<label for="q5o1">Document Path</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q5o2" name="q5" value="o2">
+							<label for="q5o2">LocalStorage</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q5o3" name="q5" value="o3">
+							<label for="q5o3">SessionStorage</label>
+						</div>
+						<div class="option">
+							<input type="radio" id="q5o4" name="q5" value="o4">
+                            <label for="q5o4">All of the above</label>
+						</div>
+					</div>
+				</div>
+				<hr>
+				<div id="submit">
+					<button>Submit</button>
+				</div>
+			</form>
+		</div>
+	</div>
+</body>
+</html>

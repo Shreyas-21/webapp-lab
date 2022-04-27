@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>User Details</title>
+	<link href="style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+	<div id="query-container">
+		<div id="query">
+			<label for="user">Enter user ID: </label>
+			<input type="text" name="user" id="user">
+			<button id='submit-button'>Get User!</button>
+		</div>
+	</div>
+	<div id='user-table-container'></div>
+</body>
+<script>
+    document.getElementById('submit-button').addEventListener('click', function() {
+            var id = document.getElementById('user').value;
+            readXml(id);
+    });
+function readXml(userid){
+    var xmlFile="user.xml";
+    var xmlDoc;
+    if (typeof window.DOMParser != "undefined") {
+        xmlhttp=new XMLHttpRequest();
+        xmlhttp.open("GET",xmlFile,false);
+        if (xmlhttp.overrideMimeType){
+            xmlhttp.overrideMimeType('text/xml');
+        }
+        xmlhttp.send();
+        xmlDoc=xmlhttp.responseXML;
+    } else{
+        xmlDoc = new ActiveXObject("Microsoft.XMLDOM");
+        xmlDoc.async="false";
+        xmlDoc.load(xmlFile);
+    }
+    var data=xmlDoc.getElementsByTagName("data")[0];
+    var noOfUsers = xmlDoc.getElementsByTagName("data")[0].childNodes.length;
+    var tableHtml = "<div class=\"table-title\"><h2>User Details</h2></div>";
+    tableHtml += "<table class=\"table-fill\">\n"
+                + "        <thead>\n"
+                + "         <tr>\n"
+                + "             <th class=\"text-left\">id</th>\n"
+                + "             <th class=\"text-left\">gender</th>\n"
+                + "             <th class=\"text-left\">name</th>\n"
+                + "             <th class=\"text-left\">location</th>\n"
+                + "             <th class=\"text-left\">email</th>\n"
+                + "             <th class=\"text-left\">dob</th>\n"
+                + "             <th class=\"text-left\">phone</th>\n"
+                + "         </tr>\n"
+                + "     </thead>\n"
+                + "     <tbody class=\"table-hover\">";
+    for (var i = 1; i <= 10; i++) {
+        var user = xmlDoc.getElementsByTagName("user")[i-1];
+        var id = parseInt(user.childNodes[1].textContent)
+        if (id == userid) {
+            tableHtml += "<tr><td class='text-left'>" + user.childNodes[1].textContent + "</td>\n";
+            tableHtml += "<td class='text-left'>" + user.childNodes[3].textContent + "</td>\n";
+            tableHtml += "<td class='text-left'>" + user.childNodes[5].textContent + "</td>\n";
+            tableHtml += "<td class='text-left'>" + user.childNodes[7].textContent + "</td>\n";
+            tableHtml += "<td class='text-left'>" + user.childNodes[9].textContent + "</td>\n";
+            tableHtml += "<td class='text-left'>" + user.childNodes[11].textContent + "</td>\n";
+            tableHtml += "<td class='text-left'>" + user.childNodes[13].textContent + "</td></tr>\n";
+            console.log(tableHtml);
+        }
+    }
+    tableHtml += "</tbody></table>";
+    document.getElementById('user-table-container').innerHTML = tableHtml;
+}
+</script>
+</html>
